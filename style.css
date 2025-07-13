@@ -26,3 +26,52 @@
   font-size:1.3rem;}
 .clock{position:fixed;top:1rem;right:1rem;background:#000;color:var(--c-yellow);
   font:700 2rem/1 var(--font-main);padding:.4rem .8rem;border-radius:.3rem;}
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.card {
+  border-radius: 6px;
+  background: #f0f0f0;
+  padding: 0.6rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: 'Frutiger', sans-serif;
+}
+
+.card .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.3rem;
+}
+
+.card .line {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.card .dest {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.card .min {
+  background: #000;
+  color: #ffd400;
+  font-weight: bold;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+.card.vert  .min { background: #006600; }
+.card.orange.min { background: #ff7e00; }
+.card.rouge .min { background: #990000; }
+
+.card .gares {
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  color: #333;
+}
