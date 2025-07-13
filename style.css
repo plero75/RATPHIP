@@ -1,118 +1,82 @@
-:root{
-  --c-bg-dark:#000080;
-  --c-silver:#404A70;
-  --c-yellow:#ffd400;
-  --c-green:#006600;
-  --c-orange:#ff7e00;
-  --c-red:#990000;
-  --font-main:"Frutiger",Arial,sans-serif;
-}
-/* Cartes */
-.station{font-family:var(--font-main);margin:2rem auto;max-width:1360px;
-  border:4px solid var(--c-silver);box-shadow:0 4px 14px rgba(0,0,0,.25);}
-.station h2{background:var(--c-bg-dark);color:#fff;font-size:2.2rem;
-  margin:0;padding:.35rem .8rem;}
-.station table{width:100%;border-collapse:collapse;}
-.station tr{border-bottom:4px solid var(--c-silver);}
-.code{width:5rem;text-align:center;font-weight:700;}
-.dest{font-size:1.9rem;padding:.3rem .6rem;}
-.min{width:6rem;font-size:2.4rem;font-weight:700;text-align:center;
-  color:var(--c-yellow);background:#000;}
-.vert  .min{background:var(--c-green);}
-.orange.min{background:var(--c-orange);}
-.rouge .min{background:var(--c-red);}
-/* Alertes & horloge */
-.alert{background:#000;color:var(--c-yellow);padding:.6rem .8rem;
-  font-size:1.3rem;}
-.clock{position:fixed;top:1rem;right:1rem;background:#000;color:var(--c-yellow);
-  font:700 2rem/1 var(--font-main);padding:.4rem .8rem;border-radius:.3rem;}
-.cards {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  margin-top: 0.5rem;
-}
-
-.card {
-  border-radius: 6px;
-  background: #f0f0f0;
-  padding: 0.6rem 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  font-family: 'Frutiger', sans-serif;
-}
-
-.card .top {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  font-size: 1.3rem;
-}
-
-.card .line {
-  font-weight: bold;
-  font-size: 1.4rem;
-}
-
-.card .dest {
-  flex: 1;
-  margin: 0 1rem;
-}
-
-.card .min {
-  background: #000;
-  color: #ffd400;
-  font-weight: bold;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-}
-
-.card.vert  .min { background: #006600; }
-.card.orange.min { background: #ff7e00; }
-.card.rouge .min { background: #990000; }
-
-.card .gares {
-  margin-top: 0.4rem;
-  font-size: 0.95rem;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: #f4f7fa;
   color: #333;
 }
 
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2rem;
+}
+
+#dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
 .station {
-  background: #f8f9fa;
-  margin: 2rem auto;
-  padding: 1rem 2rem;
-  max-width: 900px;
-  border-radius: 12px;
+  background: white;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 340px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.station-title {
+  font-size: 1.5rem;
+  color: #0063B2;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 5px;
+  margin: 0;
 }
 
 .line-block {
-  margin-top: 1rem;
-  padding: 1rem;
-  background: #fff;
-  border-left: 5px solid navy;
-  border-radius: 8px;
-}
-
-.line-code {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-right: 1rem;
-}
-
-.departure {
-  display: flex;
-  justify-content: space-between;
-  margin: 0.5rem 0;
-  padding: 0.5rem;
-  background: #e8f5e9;
+  background: #f9fafc;
+  border-left: 4px solid #0063B2;
+  padding: 10px;
   border-radius: 6px;
 }
 
-.cancelled {
-  background: #ffe6e6;
-  color: #a00;
+.line-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1rem;
 }
 
-.status {
-  font-weight: bold;
+.departures {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.departures li {
+  padding: 6px 0;
+  border-bottom: 1px dashed #ddd;
+  font-size: 0.95rem;
+}
+
+.countdown, .status {
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.stops {
+  display: block;
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .station {
+    width: 90%;
+  }
 }
