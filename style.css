@@ -1,82 +1,55 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  background: #f4f7fa;
-  color: #333;
-}
 
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
+  margin: 0;
+  padding: 20px;
+}
 h1 {
   text-align: center;
-  margin-top: 20px;
-  font-size: 2rem;
+  color: #333;
 }
-
-#dashboard {
+.dashboard {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 20px;
-  padding: 20px;
+  justify-content: center;
 }
-
 .station {
-  background: white;
+  background: #fff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  width: 340px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  width: 300px;
 }
-
 .station-title {
-  font-size: 1.5rem;
-  color: #0063B2;
+  font-size: 1.4em;
+  color: #0066cc;
   border-bottom: 2px solid #eee;
   padding-bottom: 5px;
-  margin: 0;
+  margin-bottom: 10px;
 }
-
-.line-block {
-  background: #f9fafc;
-  border-left: 4px solid #0063B2;
-  padding: 10px;
-  border-radius: 6px;
-}
-
 .line-header {
   font-weight: bold;
+  margin-top: 10px;
   margin-bottom: 5px;
-  font-size: 1rem;
 }
-
 .departures {
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
-
 .departures li {
-  padding: 6px 0;
-  border-bottom: 1px dashed #ddd;
-  font-size: 0.95rem;
+  margin-bottom: 10px;
+  font-size: 0.95em;
 }
-
 .countdown, .status {
-  margin-left: 10px;
-  font-weight: 600;
+  margin-left: 8px;
 }
-
+.status {
+  font-weight: bold;
+}
 .stops {
-  display: block;
-  font-size: 0.8rem;
-  color: #555;
-  margin-top: 2px;
-}
-
-@media (max-width: 768px) {
-  .station {
-    width: 90%;
-  }
+  font-size: 0.8em;
+  color: #666;
 }

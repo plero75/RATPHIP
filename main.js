@@ -1,4 +1,4 @@
-// main.js (version live avec proxy PRIM + 4 passages/direction, statuts, temps restant, arrêts, multiple lignes pour Joinville)
+// main.js (corrigé : noms de lignes, directions, arrêts à venir, statuts, visuels)
 
 const stops = [
   {
@@ -17,7 +17,7 @@ const stops = [
     lines: ["line:IDFM:C02251"],
   },
   {
-    name: "\u00c9cole du Breuil",
+    name: "École du Breuil",
     id: "STIF:StopArea:SP:463644:",
     lines: ["line:IDFM:C01219"],
   },
@@ -45,9 +45,9 @@ async function fetchDepartures(stopId) {
       const stopsUrl = proxyBase + encodeURIComponent(journeyBase + journeyId);
       const stopsRes = await fetch(stopsUrl);
       const stopsJson = await stopsRes.json();
-      stops = stopsJson?.journey?.calls?.map(call => call.stop_name).slice(0, 5) || [];
+      stops = stopsJson?.journey?.calls?.map(call => call.stop_name).slice(0, 10) || [];
     } catch (e) {
-      console.warn("Erreur chargement arr\u00eats:", e);
+      console.warn("Erreur chargement arrêts:", e);
     }
 
     const now = new Date();
@@ -63,17 +63,16 @@ async function fetchDepartures(stopId) {
     }
 
     return {
-      line: mvj.PublishedLineName || mvj.LineRef,
-      destination: mc?.DestinationDisplay || "?",
+      line: mvj?.PublishedLineName || mvj?.LineRef || "?",
+      destination: mc?.DestinationDisplay?.FrontText || mc?.DestinationDisplay || "?",
       expected,
       minutes,
       status,
       stops,
-      direction: mvj.DirectionName || "",
+      direction: mvj?.DirectionName || "?",
     };
   }));
 
-  // Regrouper par direction et limiter à 4 par sens
   const byDirection = {};
   for (const dep of departures) {
     const dir = dep.destination;
